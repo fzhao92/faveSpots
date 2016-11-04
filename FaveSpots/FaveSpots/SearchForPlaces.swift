@@ -6,4 +6,12 @@
 //  Copyright © 2016 ForrestApps. All rights reserved.
 //
 
-import Foundation
+import MapKit
+
+class SearchForPlaces {
+    
+    class func search(forPlaceQueryTerm term: String) {
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = term
+    }
+}

@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		3F2AB92C1DCCE3D500D6BC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB92B1DCCE3D500D6BC43 /* AppDelegate.swift */; };
-		3F2AB92E1DCCE3D500D6BC43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB92D1DCCE3D500D6BC43 /* ViewController.swift */; };
+		3F2AB92E1DCCE3D500D6BC43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB92D1DCCE3D500D6BC43 /* MapViewController.swift */; };
 		3F2AB9311DCCE3D500D6BC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2AB92F1DCCE3D500D6BC43 /* Main.storyboard */; };
 		3F2AB9331DCCE3D500D6BC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2AB9321DCCE3D500D6BC43 /* Assets.xcassets */; };
 		3F2AB9361DCCE3D500D6BC43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2AB9341DCCE3D500D6BC43 /* LaunchScreen.storyboard */; };
 		3FB3912D1DCD04F300959BCD /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3912C1DCD04F300959BCD /* SearchResultsTableViewController.swift */; };
 		3FB391301DCD051300959BCD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB3912F1DCD051300959BCD /* MapKit.framework */; };
 		3FB391321DCD0B4200959BCD /* SearchRequestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB391311DCD0B4200959BCD /* SearchRequestDataSource.swift */; };
+		3FB391341DCD0D1200959BCD /* SearchForPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB391331DCD0D1200959BCD /* SearchForPlaces.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F2AB9281DCCE3D500D6BC43 /* FaveSpots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaveSpots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2AB92B1DCCE3D500D6BC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F2AB92D1DCCE3D500D6BC43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F2AB92D1DCCE3D500D6BC43 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3F2AB9301DCCE3D500D6BC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F2AB9321DCCE3D500D6BC43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2AB9351DCCE3D500D6BC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +29,7 @@
 		3FB3912C1DCD04F300959BCD /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		3FB3912F1DCD051300959BCD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3FB391311DCD0B4200959BCD /* SearchRequestDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRequestDataSource.swift; sourceTree = "<group>"; };
+		3FB391331DCD0D1200959BCD /* SearchForPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchForPlaces.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +65,14 @@
 			isa = PBXGroup;
 			children = (
 				3F2AB92B1DCCE3D500D6BC43 /* AppDelegate.swift */,
-				3F2AB92D1DCCE3D500D6BC43 /* ViewController.swift */,
+				3F2AB92D1DCCE3D500D6BC43 /* MapViewController.swift */,
 				3F2AB92F1DCCE3D500D6BC43 /* Main.storyboard */,
 				3F2AB9321DCCE3D500D6BC43 /* Assets.xcassets */,
 				3F2AB9341DCCE3D500D6BC43 /* LaunchScreen.storyboard */,
 				3F2AB9371DCCE3D600D6BC43 /* Info.plist */,
 				3FB3912C1DCD04F300959BCD /* SearchResultsTableViewController.swift */,
 				3FB391311DCD0B4200959BCD /* SearchRequestDataSource.swift */,
+				3FB391331DCD0D1200959BCD /* SearchForPlaces.swift */,
 			);
 			path = FaveSpots;
 			sourceTree = "<group>";
@@ -160,7 +163,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F2AB92E1DCCE3D500D6BC43 /* ViewController.swift in Sources */,
+				3F2AB92E1DCCE3D500D6BC43 /* MapViewController.swift in Sources */,
+				3FB391341DCD0D1200959BCD /* SearchForPlaces.swift in Sources */,
 				3F2AB92C1DCCE3D500D6BC43 /* AppDelegate.swift in Sources */,
 				3FB391321DCD0B4200959BCD /* SearchRequestDataSource.swift in Sources */,
 				3FB3912D1DCD04F300959BCD /* SearchResultsTableViewController.swift in Sources */,
