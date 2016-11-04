@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager {
-            displayCurrentUserLocation()
+            centerMapOnCurrentLocation()
         }
     }
 
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func displayCurrentUserLocation() {
+    func centerMapOnCurrentLocation() {
         let center = CLLocationCoordinate2D(latitude: store.currentLocation.coordinate.latitude, longitude: store.currentLocation.coordinate.longitude)
         let span = MKCoordinateSpanMake(0.02, 0.02) //arbitrary span (about 2X2 miles i think)
         let region = MKCoordinateRegion(center: center, span: span)
@@ -44,8 +44,8 @@ extension ViewController: CLLocationManagerDelegate{
     func setupLocationManager(completion: () -> Void){
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         
         if let unwrappedLocation = locationManager.location{
             store.currentLocation = unwrappedLocation
