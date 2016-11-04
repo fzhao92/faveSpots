@@ -14,6 +14,7 @@
 		3F2AB9361DCCE3D500D6BC43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2AB9341DCCE3D500D6BC43 /* LaunchScreen.storyboard */; };
 		3FB3912D1DCD04F300959BCD /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3912C1DCD04F300959BCD /* SearchResultsTableViewController.swift */; };
 		3FB391301DCD051300959BCD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB3912F1DCD051300959BCD /* MapKit.framework */; };
+		3FB391321DCD0B4200959BCD /* SearchRequestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB391311DCD0B4200959BCD /* SearchRequestDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3F2AB9371DCCE3D600D6BC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FB3912C1DCD04F300959BCD /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		3FB3912F1DCD051300959BCD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3FB391311DCD0B4200959BCD /* SearchRequestDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRequestDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				3F2AB9341DCCE3D500D6BC43 /* LaunchScreen.storyboard */,
 				3F2AB9371DCCE3D600D6BC43 /* Info.plist */,
 				3FB3912C1DCD04F300959BCD /* SearchResultsTableViewController.swift */,
+				3FB391311DCD0B4200959BCD /* SearchRequestDataSource.swift */,
 			);
 			path = FaveSpots;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				3F2AB92E1DCCE3D500D6BC43 /* ViewController.swift in Sources */,
 				3F2AB92C1DCCE3D500D6BC43 /* AppDelegate.swift in Sources */,
+				3FB391321DCD0B4200959BCD /* SearchRequestDataSource.swift in Sources */,
 				3FB3912D1DCD04F300959BCD /* SearchResultsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
