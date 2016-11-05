@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController {
+class POIMapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -25,13 +25,6 @@ class ViewController: UIViewController {
         }
         self.store.searchForTerm(term: "Restaurants")
         print("Search result count is \(self.store.currentSearchResults.count)")
-        
-        /*
-        SearchResults.search(forPlaceQueryTerm: "hohoho", region: store.currentLocationRegion!) { (items) in
-            for item in items {
-                print(item.name)
-            }
-        }*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +42,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: CLLocationManagerDelegate{
+extension POIMapViewController: CLLocationManagerDelegate{
     
     func setupLocationManager(completion: () -> Void){
         locationManager.delegate = self
