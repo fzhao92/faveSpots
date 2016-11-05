@@ -13,5 +13,13 @@ class SearchRequestDataSource {
     private init() {}
     
     var searchRequests: [MKLocalSearchRequest] = []
+    var currentSearchResults: [MKMapItem] = []
     var currentLocation = CLLocation()
+    var currentLocationRegion: MKCoordinateRegion?
+    
+    func searchForTerm(term: String) {
+        SearchResults.search(forPlaceQueryTerm: term, region: currentLocationRegion!) { (searchResultItems) in
+            self.currentSearchResults = searchResultItems
+        }
+    }
 }

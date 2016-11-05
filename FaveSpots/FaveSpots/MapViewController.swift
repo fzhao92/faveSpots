@@ -23,6 +23,15 @@ class ViewController: UIViewController {
         setupLocationManager {
             centerMapOnCurrentLocation()
         }
+        self.store.searchForTerm(term: "Restaurants")
+        print("Search result count is \(self.store.currentSearchResults.count)")
+        
+        /*
+        SearchResults.search(forPlaceQueryTerm: "hohoho", region: store.currentLocationRegion!) { (items) in
+            for item in items {
+                print(item.name)
+            }
+        }*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +43,7 @@ class ViewController: UIViewController {
         let center = CLLocationCoordinate2D(latitude: store.currentLocation.coordinate.latitude, longitude: store.currentLocation.coordinate.longitude)
         let span = MKCoordinateSpanMake(0.02, 0.02) //arbitrary span (about 2X2 miles i think)
         let region = MKCoordinateRegion(center: center, span: span)
+        store.currentLocationRegion = region
         mapView.setRegion(region, animated: true)
     }
 
