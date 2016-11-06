@@ -31,9 +31,9 @@ class SearchResultsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath)
-        let selectedItem = store.currentSearchResults[indexPath.row].placemark
-        cell.textLabel?.text = selectedItem.name
-        cell.detailTextLabel?.text = "hahah"
+        let selectedItem = store.currentSearchResults[indexPath.row]
+        cell.textLabel?.text = selectedItem.placemark.name
+        cell.detailTextLabel?.text = selectedItem.parseAddress(selectedItem: selectedItem.placemark)
         return cell
     }
 
