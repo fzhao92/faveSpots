@@ -23,8 +23,8 @@ class POIMapViewController: UIViewController {
         setupLocationManager {
             centerMapOnCurrentLocation()
         }
-        self.store.searchForTerm(term: "Restaurants")
-        print("Search result count is \(self.store.currentSearchResults.count)")
+//        self.store.searchFor(placeRelatedTerm: "Restaurants")
+//        print("Search result count is \(self.store.currentSearchResults.count)")
     }
 
     override func didReceiveMemoryWarning() {
