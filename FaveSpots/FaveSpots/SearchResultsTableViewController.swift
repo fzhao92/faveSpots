@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import MapKit
+
+protocol HandleMapSearch {
+    func dropPOI(placemark: MKPlacemark)
+}
 
 class SearchResultsTableViewController: UITableViewController {
 
     var searchController: UISearchController? = nil
+    var POIPin: MKPlacemark? = nil
     let store = SearchRequestDataSource.sharedInstance
     
     override func viewDidLoad() {
@@ -72,4 +78,18 @@ extension SearchResultsTableViewController: UISearchResultsUpdating {
         store.searchFor(placeRelatedTerm: searchTerm)
         tableView.reloadData()
     }
+}
+
+extension SearchResultsTableViewController: HandleMapSearch {
+    func dropPOI(placemark: MKPlacemark) {
+        //cache pin
+        POIPin = placemark
+        //clear existing pins if needed
+        //mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.title = placemark.name
+        
+    }
+
+    
 }

@@ -22,13 +22,13 @@ protocol LocationDetails {
 
 struct POI: LocationDetails {
     
-    internal var distanceFromCurrent: Int
+    var distanceFromCurrent: Int
 
-    internal var rating: Rating
+    var rating: Rating
 
-    internal var comments: String
+    var comments: String
 
-    internal var name: String
+    var name: String
 
 }
 

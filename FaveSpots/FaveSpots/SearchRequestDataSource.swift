@@ -12,7 +12,8 @@ class SearchRequestDataSource {
     static let sharedInstance = SearchRequestDataSource()
     private init() {}
     
-    var searchRequests: [MKLocalSearchRequest] = []
+    //var searchRequests: [MKLocalSearchRequest] = []
+    var searchHistory: [String] = []
     var currentSearchResults: [MKMapItem] = []
     var currentLocation = CLLocation()
     var currentLocationRegion: MKCoordinateRegion?
@@ -20,12 +21,15 @@ class SearchRequestDataSource {
     func searchFor(placeRelatedTerm term: String) {
         SearchResults.search(forPlaceQueryTerm: term, region: currentLocationRegion!) { (searchResultItems) in
             self.currentSearchResults = searchResultItems
+            if self.currentSearchResults.count > 0 {
+                self.searchHistory.append(term)
+            }
         }
     }
 }
 
 extension MKMapItem {
-    func parseAddress(selectedItem:MKPlacemark) -> String {
+    func parseAddress(selectedItem: MKPlacemark) -> String {
         // put a space between "4" and "Melrose Place"
         let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : ""
         // put a comma between street and city/state

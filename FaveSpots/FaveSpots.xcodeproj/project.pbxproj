@@ -75,10 +75,10 @@
 				3FB391311DCD0B4200959BCD /* SearchRequestDataSource.swift */,
 				3FB391331DCD0D1200959BCD /* SearchForPlaces.swift */,
 				3F2B3E411DCE902900A8EA6E /* SearchResultsTableViewController.swift */,
+				3F2B3E3F1DCE8B6400A8EA6E /* POI.swift */,
 				3F2AB9341DCCE3D500D6BC43 /* LaunchScreen.storyboard */,
 				3F2AB9371DCCE3D600D6BC43 /* Info.plist */,
 				3F2AB9321DCCE3D500D6BC43 /* Assets.xcassets */,
-				3F2B3E3F1DCE8B6400A8EA6E /* POI.swift */,
 			);
 			path = FaveSpots;
 			sourceTree = "<group>";
