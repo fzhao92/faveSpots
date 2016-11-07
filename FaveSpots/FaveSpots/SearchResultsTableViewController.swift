@@ -20,13 +20,11 @@ class SearchResultsTableViewController: UITableViewController {
     var selectedSearchResultPlacemark: MKPlacemark?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         setupSearchController()
-        
         handleMapSearchDelegate = navigationController?.viewControllers.first as! POIMapViewController
         
-        
-        print("printing delegate \(handleMapSearchDelegate)")
     }
 
     // MARK: - Table view data source
@@ -36,7 +34,6 @@ class SearchResultsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return store.currentSearchResults.count
     }
 
@@ -52,7 +49,6 @@ class SearchResultsTableViewController: UITableViewController {
         
         if let handleMap = handleMapSearchDelegate{
             handleMap.dropPOI(placemark: store.currentSearchResults[indexPath.row].placemark)
-            print("Current view controller is \(navigationController?.viewControllers[0])")
             let _ = navigationController?.popToRootViewController(animated: true)
         }
         else {
@@ -69,6 +65,8 @@ class SearchResultsTableViewController: UITableViewController {
         let searchBar = searchController.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for..."
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
         navigationItem.titleView = searchController.searchBar
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
@@ -79,10 +77,23 @@ class SearchResultsTableViewController: UITableViewController {
 
 extension SearchResultsTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        print("In search results updating delegate method")
         guard let searchTerm = searchController.searchBar.text else{ return }
         store.searchFor(placeRelatedTerm: searchTerm)
         tableView.reloadData()
+    }
+}
+
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        store.currentSearchResults.removeAll()
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("Search clicked!!!!")
+        
     }
 }
 

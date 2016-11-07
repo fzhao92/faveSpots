@@ -29,6 +29,9 @@ class POIMapViewController: UIViewController {
         
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
+        let trackingButton = MKUserTrackingBarButtonItem()
+        trackingButton.mapView = mapView
+
         setupLocationManager {
             centerMapOnCurrentLocation()
         }
@@ -79,7 +82,6 @@ extension POIMapViewController: CLLocationManagerDelegate{
 extension POIMapViewController: HandleMapSearch {
     
     func dropPOI(placemark: MKPlacemark) {
-        print("hey getting called")
         //cache pin
         POIPin = placemark
         //clear existing pins if needed

@@ -95,7 +95,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fef-a9-uKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="-376"/>
+            <point key="canvasLocation" x="1593" y="-513"/>
         </scene>
         <!--Search Results Table View Controller-->
         <scene sceneID="wi1-rg-ImM">
@@ -158,10 +158,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVq-85-52z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-54" y="-674"/>
+            <point key="canvasLocation" x="-166" y="-675"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Mgz-xl-yJX"/>
+        <segue reference="RB1-mt-Ppo"/>
     </inferredMetricsTieBreakers>
 </document>

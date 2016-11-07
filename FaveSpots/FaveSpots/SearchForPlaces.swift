@@ -28,9 +28,6 @@ struct SearchResults: Search {
                 print("There was an error searching for: \(request.naturalLanguageQuery)... \(error?.localizedDescription)")
                 return
             }
-            for item in unwrappedResponse.mapItems {
-                print(item.name)
-            }
             completion(unwrappedResponse.mapItems)
         }
     }
