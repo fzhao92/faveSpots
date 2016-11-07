@@ -6,8 +6,11 @@
 //  Copyright © 2016 ForrestApps. All rights reserved.
 //
 
+
 protocol Search {
+    
     static func search(forPlaceQueryTerm term: String, region: MKCoordinateRegion, completion: @escaping ([MKMapItem]) -> Void)
+    
 }
 
 import MapKit

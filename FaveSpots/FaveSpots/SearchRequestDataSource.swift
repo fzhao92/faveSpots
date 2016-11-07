@@ -12,7 +12,6 @@ class SearchRequestDataSource {
     static let sharedInstance = SearchRequestDataSource()
     private init() {}
     
-    //var searchRequests: [MKLocalSearchRequest] = []
     var searchHistory: [String] = []
     var currentSearchResults: [MKMapItem] = []
     var currentLocation = CLLocation()

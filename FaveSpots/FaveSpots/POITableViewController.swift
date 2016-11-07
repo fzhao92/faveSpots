@@ -20,6 +20,11 @@ class POITableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    @IBAction func mapViewTapped(_ sender: AnyObject) {
+        
+       _ =  navigationController?.popViewController(animated: true)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

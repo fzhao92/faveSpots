@@ -10,8 +10,11 @@ import UIKit
 import CoreLocation
 import MapKit
 
-protocol HandleMapSearch {
+
+protocol HandleMapSearch: class {
+    
     func dropPOI(placemark: MKPlacemark)
+    
 }
 
 class POIMapViewController: UIViewController {
@@ -23,11 +26,13 @@ class POIMapViewController: UIViewController {
     var POIPin: MKPlacemark? = nil
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
         setupLocationManager {
             centerMapOnCurrentLocation()
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,16 +40,9 @@ class POIMapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSearch"{
-            let dest = segue.destination as! SearchResultsTableViewController
-            dest.handleMapSearchDelegate = self
-        }
-    }
-    
     func centerMapOnCurrentLocation() {
         let center = CLLocationCoordinate2D(latitude: store.currentLocation.coordinate.latitude, longitude: store.currentLocation.coordinate.longitude)
-        let span = MKCoordinateSpanMake(0.02, 0.02) //arbitrary span (about 2X2 miles i think)
+        let span = MKCoordinateSpanMake(ZoomValue.regular.rawValue, ZoomValue.regular.rawValue) //arbitrary span (about 2X2 miles i think)
         let region = MKCoordinateRegion(center: center, span: span)
         store.currentLocationRegion = region
         mapView.setRegion(region, animated: true)
@@ -89,13 +87,14 @@ extension POIMapViewController: HandleMapSearch {
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
-        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let span = MKCoordinateSpanMake(ZoomValue.zoom.rawValue, ZoomValue.zoom.rawValue)
         mapView.addAnnotation(annotation)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
     }
     
 }
+
 
 
 

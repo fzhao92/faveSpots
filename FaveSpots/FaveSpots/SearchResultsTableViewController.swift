@@ -12,7 +12,7 @@ import MapKit
 
 class SearchResultsTableViewController: UITableViewController {
     
-    var handleMapSearchDelegate: HandleMapSearch?
+    weak var handleMapSearchDelegate: HandleMapSearch?
     var mapView: MKMapView? = nil
 
     var searchController: UISearchController = UISearchController(searchResultsController: nil)
@@ -22,6 +22,9 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
+        
+        handleMapSearchDelegate = navigationController?.viewControllers.first as! POIMapViewController
+        
         
         print("printing delegate \(handleMapSearchDelegate)")
     }
@@ -46,21 +49,13 @@ class SearchResultsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("delegete \(handleMapSearchDelegate)")
+        
         if let handleMap = handleMapSearchDelegate{
-            handleMapSearchDelegate?.dropPOI(placemark: store.currentSearchResults[indexPath.row].placemark)
-            
-            var i = 0
-            while ( i < (navigationController?.viewControllers.count)! )  {
-                if( (navigationController?.viewControllers[i])?.isKind(of: POIMapViewController.self) )! {
-                    
-                    navigationController?.popToViewController(self.navigationController!.viewControllers[i] as! POIMapViewController, animated: true)
-                    break;
-                }
-                i += 1
-            }
-            
-        }else{
+            handleMap.dropPOI(placemark: store.currentSearchResults[indexPath.row].placemark)
+            print("Current view controller is \(navigationController?.viewControllers[0])")
+            let _ = navigationController?.popToRootViewController(animated: true)
+        }
+        else {
             print("handleMap becoming nil")
         }
         
@@ -78,15 +73,6 @@ class SearchResultsTableViewController: UITableViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
-    }
-    
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMapNav" {
-            let dest: UINavigationController = segue.destination as! UINavigationController
-        }
-        
     }
 
 }
