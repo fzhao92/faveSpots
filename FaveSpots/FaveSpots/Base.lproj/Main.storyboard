@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="-647"/>
+            <point key="canvasLocation" x="764" y="-316"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="vbA-qp-dkf">
@@ -95,7 +95,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fef-a9-uKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2116" y="-472"/>
+            <point key="canvasLocation" x="2191" y="-399"/>
         </scene>
         <!--Search Results Table View Controller-->
         <scene sceneID="wi1-rg-ImM">
@@ -129,9 +129,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="iZJ-zV-7PI" kind="show" identifier="showMapNav" id="N3c-wK-LVa"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -143,7 +140,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2f-YI-NqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2258" y="-1641"/>
+            <point key="canvasLocation" x="1777" y="-1363"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IYD-fy-XS4">
@@ -166,6 +163,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="z1S-tE-Lcs"/>
-        <segue reference="Mgz-xl-yJX"/>
+        <segue reference="RB1-mt-Ppo"/>
     </inferredMetricsTieBreakers>
 </document>

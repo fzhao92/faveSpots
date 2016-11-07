@@ -28,15 +28,18 @@ class POIMapViewController: UIViewController {
         setupLocationManager {
             centerMapOnCurrentLocation()
         }
-        if let placemark = POIPin {
-            dropPOI(placemark: placemark)
-        }
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSearch"{
+            let dest = segue.destination as! SearchResultsTableViewController
+            dest.handleMapSearchDelegate = self
+        }
     }
     
     func centerMapOnCurrentLocation() {
@@ -78,10 +81,11 @@ extension POIMapViewController: CLLocationManagerDelegate{
 extension POIMapViewController: HandleMapSearch {
     
     func dropPOI(placemark: MKPlacemark) {
+        print("hey getting called")
         //cache pin
         POIPin = placemark
         //clear existing pins if needed
-        //mapView.removeAnnotations(mapView.annotations)
+        mapView.removeAnnotations(mapView.annotations)
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
