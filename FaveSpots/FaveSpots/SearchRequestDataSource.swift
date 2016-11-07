@@ -21,6 +21,7 @@ class SearchRequestDataSource {
     func searchFor(placeRelatedTerm term: String) {
         SearchResults.search(forPlaceQueryTerm: term, region: currentLocationRegion!) { (searchResultItems) in
             self.currentSearchResults = searchResultItems
+            print("Number of items in result is \(self.currentSearchResults.count)")
             if self.currentSearchResults.count > 0 {
                 self.searchHistory.append(term)
             }

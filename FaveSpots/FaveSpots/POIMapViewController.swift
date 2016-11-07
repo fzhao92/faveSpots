@@ -10,21 +10,28 @@ import UIKit
 import CoreLocation
 import MapKit
 
+protocol HandleMapSearch {
+    func dropPOI(placemark: MKPlacemark)
+}
+
 class POIMapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager = CLLocationManager()
     let store = SearchRequestDataSource.sharedInstance
-    
+    var POIPin: MKPlacemark? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
         setupLocationManager {
             centerMapOnCurrentLocation()
         }
-//        self.store.searchFor(placeRelatedTerm: "Restaurants")
-//        print("Search result count is \(self.store.currentSearchResults.count)")
+        if let placemark = POIPin {
+            dropPOI(placemark: placemark)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +73,24 @@ extension POIMapViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
     }
+}
+
+extension POIMapViewController: HandleMapSearch {
+    
+    func dropPOI(placemark: MKPlacemark) {
+        //cache pin
+        POIPin = placemark
+        //clear existing pins if needed
+        //mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        mapView.addAnnotation(annotation)
+        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        mapView.setRegion(region, animated: true)
+    }
+    
 }
 
 

@@ -9,15 +9,12 @@
 import UIKit
 import MapKit
 
-protocol HandleMapSearch {
-    func dropPOI(placemark: MKPlacemark)
-}
 
 class SearchResultsTableViewController: UITableViewController {
 
     var searchController: UISearchController? = nil
-    var POIPin: MKPlacemark? = nil
     let store = SearchRequestDataSource.sharedInstance
+    var selectedSearchResultPlacemark: MKPlacemark?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +39,11 @@ class SearchResultsTableViewController: UITableViewController {
         cell.detailTextLabel?.text = selectedItem.parseAddress(selectedItem: selectedItem.placemark)
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedSearchResultPlacemark = store.currentSearchResults[indexPath.row].placemark
+        performSegue(withIdentifier: "showMapNav", sender: nil)
+    }
 
     // MARK: - Search setup and functionality
     
@@ -59,15 +61,17 @@ class SearchResultsTableViewController: UITableViewController {
     }
     
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showMapNav" {
+            let dest: UINavigationController = segue.destination as!UINavigationController
+            let targetController = dest.topViewController as! POIMapViewController
+            if let selectedPlacemark = selectedSearchResultPlacemark {
+                targetController.POIPin = selectedPlacemark
+            }
+        }
+        
     }
-    */
 
 }
 
@@ -80,16 +84,3 @@ extension SearchResultsTableViewController: UISearchResultsUpdating {
     }
 }
 
-extension SearchResultsTableViewController: HandleMapSearch {
-    func dropPOI(placemark: MKPlacemark) {
-        //cache pin
-        POIPin = placemark
-        //clear existing pins if needed
-        //mapView.removeAnnotations(mapView.annotations)
-        let annotation = MKPointAnnotation()
-        annotation.title = placemark.name
-        
-    }
-
-    
-}
