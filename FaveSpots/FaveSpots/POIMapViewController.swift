@@ -97,6 +97,14 @@ extension POIMapViewController: HandleMapSearch {
     
 }
 
+extension POIMapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        <#code#>
+    }
+    
+}
+
 
 
 

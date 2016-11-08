@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="-675"/>
+            <point key="canvasLocation" x="590" y="-675"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="vbA-qp-dkf">
@@ -95,7 +95,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fef-a9-uKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="-513"/>
+            <point key="canvasLocation" x="590" y="141"/>
         </scene>
         <!--Search Results Table View Controller-->
         <scene sceneID="wi1-rg-ImM">
@@ -140,7 +140,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2f-YI-NqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1613" y="-1332"/>
+            <point key="canvasLocation" x="1455" y="-675"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IYD-fy-XS4">
@@ -162,6 +162,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RB1-mt-Ppo"/>
+        <segue reference="Mgz-xl-yJX"/>
     </inferredMetricsTieBreakers>
 </document>

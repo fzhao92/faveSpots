@@ -16,6 +16,8 @@ protocol LocationDetails {
     
     var rating: Rating { get set }
     
+    var category: String { get set }
+    
     var distanceFromCurrent: Int { get set }
     
 }
@@ -29,6 +31,8 @@ struct POI: LocationDetails {
     var comments: String
 
     var name: String
+    
+    var category: String
 
 }
 

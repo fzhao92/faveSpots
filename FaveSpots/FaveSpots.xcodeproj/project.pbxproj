@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1AE8E01DD28F4500247C80 /* PlaceInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1AE8DF1DD28F4500247C80 /* PlaceInfoView.xib */; };
 		3F2AB92C1DCCE3D500D6BC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB92B1DCCE3D500D6BC43 /* AppDelegate.swift */; };
 		3F2AB92E1DCCE3D500D6BC43 /* POIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB92D1DCCE3D500D6BC43 /* POIMapViewController.swift */; };
 		3F2AB9311DCCE3D500D6BC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2AB92F1DCCE3D500D6BC43 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F1AE8DF1DD28F4500247C80 /* PlaceInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceInfoView.xib; sourceTree = "<group>"; };
 		3F2AB9281DCCE3D500D6BC43 /* FaveSpots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaveSpots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2AB92B1DCCE3D500D6BC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F2AB92D1DCCE3D500D6BC43 /* POIMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIMapViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				3F2AB9371DCCE3D600D6BC43 /* Info.plist */,
 				3F2AB9321DCCE3D500D6BC43 /* Assets.xcassets */,
 				3FD3513A1DD10346009C3BA6 /* Enums.swift */,
+				3F1AE8DF1DD28F4500247C80 /* PlaceInfoView.xib */,
 			);
 			path = FaveSpots;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			files = (
 				3F2AB9361DCCE3D500D6BC43 /* LaunchScreen.storyboard in Resources */,
 				3F2AB9331DCCE3D500D6BC43 /* Assets.xcassets in Resources */,
+				3F1AE8E01DD28F4500247C80 /* PlaceInfoView.xib in Resources */,
 				3F2AB9311DCCE3D500D6BC43 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
