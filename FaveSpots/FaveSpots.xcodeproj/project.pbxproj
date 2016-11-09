@@ -20,6 +20,7 @@
 		3FB391321DCD0B4200959BCD /* SearchRequestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB391311DCD0B4200959BCD /* SearchRequestDataSource.swift */; };
 		3FB391341DCD0D1200959BCD /* SearchForPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB391331DCD0D1200959BCD /* SearchForPlaces.swift */; };
 		3FD3513B1DD10346009C3BA6 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3513A1DD10346009C3BA6 /* Enums.swift */; };
+		3FEB7E9B1DD37B34001CE562 /* PlaceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB7E9A1DD37B34001CE562 /* PlaceInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3FB391311DCD0B4200959BCD /* SearchRequestDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRequestDataSource.swift; sourceTree = "<group>"; };
 		3FB391331DCD0D1200959BCD /* SearchForPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchForPlaces.swift; sourceTree = "<group>"; };
 		3FD3513A1DD10346009C3BA6 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		3FEB7E9A1DD37B34001CE562 /* PlaceInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				3F2AB9321DCCE3D500D6BC43 /* Assets.xcassets */,
 				3FD3513A1DD10346009C3BA6 /* Enums.swift */,
 				3F1AE8DF1DD28F4500247C80 /* PlaceInfoView.xib */,
+				3FEB7E9A1DD37B34001CE562 /* PlaceInfoView.swift */,
 			);
 			path = FaveSpots;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				3FB391321DCD0B4200959BCD /* SearchRequestDataSource.swift in Sources */,
 				3F2B3E421DCE902900A8EA6E /* SearchResultsTableViewController.swift in Sources */,
 				3FD3513B1DD10346009C3BA6 /* Enums.swift in Sources */,
+				3FEB7E9B1DD37B34001CE562 /* PlaceInfoView.swift in Sources */,
 				3FB3912D1DCD04F300959BCD /* POITableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

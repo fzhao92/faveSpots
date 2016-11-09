@@ -100,7 +100,11 @@ extension POIMapViewController: HandleMapSearch {
 extension POIMapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        <#code#>
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        return nil
     }
     
 }
