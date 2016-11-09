@@ -104,7 +104,26 @@ extension POIMapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        return nil
+        
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: "Pin")
+        
+        if annotationView == nil {
+//            annotationView = AnnotationView(annotation: annotation, reuseIdentifier: "Pin")
+//            annotationView?.canShowCallout = false
+            annotationView = MKAnnotationView(frame: <#T##CGRect#>)
+            annotationView.
+        }
+        else {
+            annotationView?.annotation = annotation
+        }
+        
+        annotationView?.image = UIImage(named: "starbucks")
+        
+        return annotationView
     }
     
 }
